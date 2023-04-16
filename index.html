@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./final.css" />
+    <title>NFT Marketplace</title>
+  </head>
+  <body class="w-full h-full overflow-auto bg-lilaDark">
+    <header class="h-screen bg-center bg-cover" style="background-image:url('./img/bg-1.png')">
+      <nav
+        class="flex items-center justify-between flex-wrap p-6 gap-5"
+      >
+        <div class="flex items-center flex-shrink-0 text-gris mr-6">
+          <span class="font-mont font-semibold text-2xl tracking-tight lg:text-3xl"
+            >NFT Marketplace</span
+          >
+        </div>
+        <div class="hidden xl:block xl:text-center py-4 xl:px-4">
+          <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+            <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-mont font-semibold mr-3">New</span>
+            <span class="font-mont mr-2 text-left flex-auto">Start investing in digital art today</span>
+            <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+          </div>
+        </div>
+        <div class="block lg:hidden">
+          <button
+            id="boton"
+            class="flex items-center px-3 py-2 border rounded text-gris border-teal-400 hover:text-white hover:border-white"
+          >
+            <svg
+              class="fill-current h-5 w-5"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div
+          id="menu"
+          class="bg-gray-300 bg-opacity-10 py-4 px-16 rounded-md w-full block items-end hidden lg:flex lg:flex-row lg:w-auto lg:bg-transparent"
+        >
+          <div
+            class="text-lg font-medium text-center text-white flex flex-col items-center lg:flex-row lg:gap-10"
+          >
+            <a
+              href="#"
+              class="menu-link block mt-4 lg:relative lg:inline-block lg:mt-0 text-gris hover:text-lila"
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              class="menu-link block mt-4 lg:relative lg:inline-block lg:mt-0 text-gris hover:text-lila"
+            >
+              Activity
+            </a>
+            <a
+              href="#"
+              class="menu-link block mt-4 lg:relative lg:inline-block lg:mt-0 text-gris hover:text-lila"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              class="menu-link block mt-4 lg:relative lg:inline-block lg:mt-0 text-gris hover:text-lila"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="grid place-items-center lg:grid-cols-2">
+        <div class="text-gris p-4 flex flex-wrap gap-7 mx-10 my-10 lg:gap-12">
+          <h2 class="text-2xl font-bold lg:text-5xl">Discover Unique and
+            <span class="text-2xl bg-gradient-to- text-lila lg:text-5xl">
+              Incredible</span> rare Digital Art
+          </h2>
+          <p class="text-md font-semibold lg:text-xl">Buy and Sales 100+
+            Cryptocurrencies with 20+ flat currencies has an using bank transfers or your credit.
+          </p>
+          <button class="bg-gradient-to-r from-purple-600 to-lila p-2 rounded-sm text-lg font-semibold hover:text-white">Explore Now</button>
+        </div>
+      </div>
+    </header>
+    <section class="grid place-items-center">
+      <h2 class="text-gris text-2xl font-bold mt-10 lg:text-3xl">Launchpad Drops</h2>
+      <div class="rounded bg-darker flex flex-col  w-4/5 my-10 shadow-lg text-gris lg:w-80">
+        <img class="rounded max-w-80 lg:h-60 lg:max-w-50" src="./img/1.gif" alt="samurai-nft">
+        <h3 class="text-xl font-bold mx-5 mt-4 lg:text-2xl">3D Digital Assests</h3>
+        <p class="mx-5 my-2 text-left lg:text-lg">Price : 138.50 ETH
+        </p>
+        <div class="flex justify-center items-center flex-wrap gap-3 my-6 max-w-4/5">
+            <span class="bg-gray-200 rounded-xl px-2 text-gray-700 font-semibold text-sm hover:text-dark cursor-pointer lg:text-base">#samurai</span>
+            <span class="bg-gray-200 rounded-xl px-2 text-gray-700 font-semibold text-sm hover:text-dark cursor-pointer lg:text-base">#cyberpunk</span>
+            <span class="bg-gray-200 rounded-xl px-2 text-gray-700 font-semibold text-sm hover:text-dark cursor-pointer lg:text-base">#winter</span>
+        </div>
+      </div>
+    </section>
+    
+    <script src="./app.js"></script>
+  </body>
+</html>
