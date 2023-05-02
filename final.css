@@ -32472,6 +32472,24 @@ video {
   content: none;
 }
 
+.scrollbar-hide{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
+.scrollbar-default{
+  -ms-overflow-style: auto;
+  scrollbar-width: auto;
+}
+
+.scrollbar-default::-webkit-scrollbar{
+  display: block;
+}
+
 @media (min-width: 1024px) {
   .menu-link::after {
     content: '';
@@ -63891,6 +63909,24 @@ video {
   .sm\:ease-in-out{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .sm\:scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .sm\:scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+
+  .sm\:scrollbar-default{
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .sm\:scrollbar-default::-webkit-scrollbar{
+    display: block;
+  }
 }
 
 @media (min-width: 768px){
@@ -95294,6 +95330,24 @@ video {
 
   .md\:ease-in-out{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .md\:scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .md\:scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+
+  .md\:scrollbar-default{
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .md\:scrollbar-default::-webkit-scrollbar{
+    display: block;
   }
 }
 
@@ -126699,6 +126753,24 @@ video {
   .lg\:ease-in-out{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .lg\:scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .lg\:scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+
+  .lg\:scrollbar-default{
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .lg\:scrollbar-default::-webkit-scrollbar{
+    display: block;
+  }
 }
 
 @media (min-width: 1280px){
@@ -158103,6 +158175,24 @@ video {
   .xl\:ease-in-out{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .xl\:scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .xl\:scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+
+  .xl\:scrollbar-default{
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .xl\:scrollbar-default::-webkit-scrollbar{
+    display: block;
+  }
 }
 
 @media (min-width: 1536px){
@@ -189506,5 +189596,23 @@ video {
 
   .\32xl\:ease-in-out{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .\32xl\:scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .\32xl\:scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+
+  .\32xl\:scrollbar-default{
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .\32xl\:scrollbar-default::-webkit-scrollbar{
+    display: block;
   }
 }

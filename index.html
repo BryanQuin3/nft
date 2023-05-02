@@ -200,6 +200,9 @@
           <p class="mx-5 my-2 text-left lg:text-lg">
             Price : <span class="text-blue-500">138.50 ETH</span>
           </p>
+          <p class="mx-5 my-0 text-left lg:text-lg">
+            USD : <span class="text-blue-500" id="usd"></span>
+          </p>
           <div
             class="flex justify-center items-center flex-wrap gap-5 my-4 mx-1 max-w-4/5"
           >
@@ -252,18 +255,20 @@
       </div>
       <div class="flex justify-start flex-wrap items-center mb-10 -ml-9 gap-x-20 lg:justify-between lg:mx-0 lg:gap-0">
         <h2 class="text-white text-2xl font-bold my-5 lg:ml-10 lg:text-3xl">Top Sellers</h2>
-        <div class="flex gap-4 lg:mr-48">
-          <button class="border-2 border-purple-700 w-10 h-10 rounded-full flex justify-center items-center hover:cursor-pointer focus:outline-none">
+        <div class="flex gap-4 lg:mr-40">
+          <button class="border-2 border-purple-700 w-10 h-10 rounded-full flex justify-center
+            items-center hover:cursor-pointer focus:outline-none scroll-left-btn">
             <span class="text-gris text-3xl font-semibold pb-1"><</span>
           </button>
-          <button class="bg-gradient-to-r from-lila to-purple-700 w-10 h-10 rounded-full flex justify-center items-center hover:cursor-pointer focus:outline-none">
+          <button class="bg-gradient-to-r from-lila to-purple-700 w-10 h-10 rounded-full flex justify-center
+            items-center hover:cursor-pointer focus:outline-none scroll-right-btn">
             <span class="text-gris text-3xl font-semibold pb-1">></span>
           </button>
         </div>
       </div>
     </section>
-    <section class="mb-10 mx-2">
-      <div class="flex items-center gap-4 overflow-x-auto scroll-snap lg:justify-center">
+    <section class="mb-10 mx-2 lg:mx-28 overflow-x-hidden">
+      <div class="flex items-center gap-4 overflow-x-auto scroll-snap scrollbar-hide scroll-container lg:w-full">
         <img class="" src="./img/seller1.png" alt="">
         <img class="" src="./img/seller2.png" alt="">
         <img class="" src="./img/seller3.png" alt="">
@@ -271,6 +276,11 @@
         <img class="" src="./img/seller5.png" alt="">
         <img class="" src="./img/seller6.png" alt="">
         <img class="" src="./img/seller7.png" alt="">
+        <img class="" src="./img/seller8.png" alt="">
+        <img class="" src="./img/seller1.png" alt="">
+        <img class="" src="./img/seller2.png" alt="">
+        <img class="" src="./img/seller3.png" alt="">
+        <img class="" src="./img/seller4.png" alt="">
       </div>
     </section>
     <script src="./app.js"></script>
