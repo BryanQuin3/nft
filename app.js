@@ -56,8 +56,8 @@ const logos = ["twitter","discord","instagram","youtube","email"];
 const divLogos = document.querySelector("#contenedorLogos");
 for(let i=0 ; i<logos.length; i++ ){
   let contenedorLogo =
-  `<div class="my-5 p-px bg-gradient-to-r from-lila to-purple-700 flex justify-center items-center rounded-lg
-    cursor-pointer">
+  `<div class="my-5 bg-gradient-to-r from-lila to-purple-700 flex justify-center items-center rounded-lg
+    cursor-pointer transition-all duration-500 transform hover:-translate-y-2">
     <img class="h-3/5" src="./img/logo-${logos[i]}.png" alt="logo-${logos[i]}">
   </div>`;
   divLogos.innerHTML += contenedorLogo;
