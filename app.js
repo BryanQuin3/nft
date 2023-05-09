@@ -23,32 +23,45 @@ scrollRightBtn.addEventListener("click", () => {
 const divSellers = document.querySelector("#sellers");
 let sellers = ["Elizabeth","Christy H","Jhoan Pen","Lila Komp","Kishimoto","Collins","Carmen P","Amada B"
   ,"Christy H","Jhoan Pen","Lila Komp","Kishimoto"];
-function sellersCards (precio){
+function sellersCards (){
   for (let i = 0; i < sellers.length; i++) {
-    let random = Math.random()*100;
-    let volumen = Math.round(random*precio)
+    const min = 50000;
+    const max = 500000;
+    let randomNumber = Math.floor(Math.random()*(max - min + 1))+min;
     let sellerImg = `./img/seller${i+1}.png`;
     let sellerName = `${sellers[i]}`;
     let divCardSeller = `
     <div class="grid place-items-center flex-shrink-0">
       <img class="" src="${sellerImg}" alt="">
       <h4 class="text-lg text-white  font-semibold lg:text-xl">${sellerName}</h4>
-      <span class="text-blue-500" id="#volumen">${volumen.toLocaleString()} USD</span>
+      <span class="text-blue-500" id="#volumen">${randomNumber.toLocaleString()} USD</span>
     `;
     divSellers.innerHTML += divCardSeller;
   }
 }
+sellersCards();
 
-// Api
-const url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD";
-fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
-    precio = data.USD;
-    sellersCards(precio);
-  })
-  .catch((error) => {
-    console.error(error);
+// Mail
+const btn = document.querySelector("#send-btn");
+const input = document.querySelector("#input");
+const divMensaje = document.querySelector("#mensaje");
+
+function showMessage(message) {
+  divMensaje.classList.remove("hidden");
+  divMensaje.innerHTML = `<p>${message}</p>`;
+  divMensaje.classList.add("block");
+  setTimeout(() => {
+    divMensaje.classList.remove("block");
+    divMensaje.classList.add("hidden");
+  }, 3000);
+}
+
+btn.addEventListener("click", () => {
+  if (input.value === "") {
+    showMessage("Please fill in this field");
+  } else {
+    showMessage("Thank you for joining our mailing list");
+  }
 });
 
 // Logos
@@ -62,3 +75,16 @@ for(let i=0 ; i<logos.length; i++ ){
   </div>`;
   divLogos.innerHTML += contenedorLogo;
 }
+
+// Api
+const price = document.querySelector("#eth-price");
+const url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD";
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    let precio = data.USD;
+    price.textContent = `1 ETH = ${precio} USD`;
+  })
+  .catch((error) => {
+    console.error(error);
+});
