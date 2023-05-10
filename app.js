@@ -57,10 +57,11 @@ function showMessage(message) {
 }
 
 btn.addEventListener("click", () => {
-  if (input.value === "") {
-    showMessage("Please fill in this field");
-  } else {
+  const expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (expresionRegular.test(input.value)) {
     showMessage("Thank you for joining our mailing list");
+  } else {
+    showMessage("Enter a valid email");
   }
 });
 
