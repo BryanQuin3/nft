@@ -5,6 +5,15 @@ boton.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
+// Parallax
+window.onscroll = function(){
+  const robot = document.querySelector("#img-robot");
+  let position = window.pageYOffset || document.documentElement.scrollTop;
+  robot.style.bottom = `${position * 0.3}px`;
+}
+
+
+
 // Scroll
 const scrollContainer = document.querySelector(".scroll-container");
 const scrollDistance = 125;
