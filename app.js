@@ -41,7 +41,7 @@ function sellersCards (){
     let sellerName = `${sellers[i]}`;
     let divCardSeller = `
     <div class="grid place-items-center flex-shrink-0">
-      <img class="" src="${sellerImg}" alt="">
+      <img loading="lazy" class="" src="${sellerImg}" alt="">
       <h4 class="text-lg text-white  font-semibold lg:text-xl">${sellerName}</h4>
       <span class="text-blue-500" id="#volumen">${randomNumber.toLocaleString()} USD</span>
     `;
@@ -81,7 +81,7 @@ for(let i=0 ; i<logos.length; i++ ){
   let contenedorLogo =
   `<div class="my-5 bg-gradient-to-r from-lila to-purple-700 flex justify-center items-center rounded-lg
     cursor-pointer transition-all duration-500 transform hover:-translate-y-2">
-    <img class="h-3/5" src="./img/logo-${logos[i]}.png" alt="logo-${logos[i]}">
+    <img loading="lazy" class="h-3/5" src="./img/logo-${logos[i]}.png" alt="logo-${logos[i]}">
   </div>`;
   divLogos.innerHTML += contenedorLogo;
 }
