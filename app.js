@@ -8,7 +8,7 @@ boton.addEventListener("click", () => {
 // Parallax
 window.onscroll = function(){
   const robot = document.querySelector("#img-robot");
-  let position = window.pageYOffset || document.documentElement.scrollTop;
+  let position = document.documentElement.scrollTop;
   robot.style.bottom = `${position * 0.3}px`;
 }
 
@@ -98,3 +98,32 @@ fetch(url)
   .catch((error) => {
     console.error(error);
 });
+
+// LazyLoading
+const lazyVideos = document.querySelectorAll('.lazy-video');
+
+/*el IntersectionObserver es una API que permite observar cambios
+ en la intersección entre un elemento y el viewport del navegador.
+*/
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    // verifica si el elemento es visible en el viewport
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      const sources = video.querySelectorAll('source');
+      sources.forEach(source => {
+        const src = source.getAttribute('data-src');
+        source.setAttribute('src', src);
+      });
+      video.load();
+      video.play();
+      // deja de observar el elemento de video, ya que ya ha sido cargado y reproducido
+      observer.unobserve(video);
+    }
+  });
+});
+// Comienza a observar cada elemento y activa el lazy loading
+lazyVideos.forEach(video => {
+  observer.observe(video);
+});
+
