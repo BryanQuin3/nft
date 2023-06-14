@@ -618,6 +618,10 @@ video {
   }
 }
 
+.visible{
+  visibility: visible;
+}
+
 .absolute{
   position: absolute;
 }
@@ -900,10 +904,6 @@ video {
 
 .hover\:-translate-y-2:hover{
   --tw-translate-y: -0.5rem;
-}
-
-.hover\:-translate-y-3:hover{
-  --tw-translate-y: -0.75rem;
 }
 
 @keyframes spin{
@@ -1370,6 +1370,24 @@ video {
 
 .scrollbar-hide::-webkit-scrollbar{
   display: none;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.transition-scroll {
+  animation-name: scroll;
+  animation-duration: 950ms;
+  animation-timing-function: ease-in-out;
 }
 
 @media (min-width: 1024px) {
