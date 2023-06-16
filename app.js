@@ -126,8 +126,3 @@ const observer = new IntersectionObserver((entries, observer) => {
 lazyVideos.forEach(video => {
   observer.observe(video);
 });
-
-let img = document.querySelector("#like");
-  img.addEventListener("dblclick", () => {
-    img.classList.toggle("hidden");
-});
