@@ -42,7 +42,7 @@ function sellersCards (){
     let divCardSeller = `
     <div class="grid place-items-center flex-shrink-0">
       <img loading="lazy" class="" src="${sellerImg}" alt="">
-      <h5 class="text-lg text-white  font-semibold lg:text-xl">${sellerName}</h5>
+      <p class="text-lg text-white  font-semibold lg:text-xl">${sellerName}</p>
       <span class="text-blue-500" id="#volumen">${randomNumber.toLocaleString()} USD</span>
     `;
     divSellers.innerHTML += divCardSeller;
