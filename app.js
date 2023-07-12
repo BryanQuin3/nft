@@ -12,21 +12,47 @@ window.onscroll = function(){
   robot.style.bottom = `${position * 0.3}px`;
 }
 
+// Options
+const menuContainers = document.querySelectorAll('.menu-options');
+const optionsDivs = document.querySelectorAll('.options');
+
+document.addEventListener('click', function(event) {
+  menuContainers.forEach(function(menuContainer, index) {
+    if (event.target === menuContainer) {
+      optionsDivs[index].style.display = 'block';
+    } else {
+      optionsDivs[index].style.display = 'none';
+    }
+  });
+});
 
 
 // Scroll
 const scrollContainer = document.querySelector(".scroll-container");
-const scrollDistance = 125;
+const scrollDistance = 280;
+const scrollDuration = 1000;
+
+const smoothScroll = (targetScrollLeft, startTime = performance.now()) => {
+  const currentTime = performance.now();
+  const elapsedTime = currentTime - startTime;
+  const progress = Math.min(elapsedTime / scrollDuration, 1);
+  const easeProgress = Math.pow(2, 10 * (progress - 1))
+  const scrollStep = (targetScrollLeft - scrollContainer.scrollLeft) * easeProgress;
+  scrollContainer.scrollTo({
+    left: scrollContainer.scrollLeft + scrollStep,
+    behavior: "auto"
+  });
+  if (progress < 1) {
+    requestAnimationFrame(() => smoothScroll(targetScrollLeft, startTime));
+  }
+};
+
 const scrollLeftBtn = document.querySelector(".scroll-left-btn");
 const scrollRightBtn = document.querySelector(".scroll-right-btn");
 
-scrollLeftBtn.addEventListener("click", () => {
-  scrollContainer.scrollBy(-scrollDistance, 0);
-});
+scrollLeftBtn.addEventListener("click", () => smoothScroll(scrollContainer.scrollLeft - scrollDistance));
+scrollRightBtn.addEventListener("click", () => smoothScroll(scrollContainer.scrollLeft + scrollDistance));
 
-scrollRightBtn.addEventListener("click", () => {
-  scrollContainer.scrollBy(scrollDistance, 0);
-});
 
 // Sellers
 const divSellers = document.querySelector("#sellers");
